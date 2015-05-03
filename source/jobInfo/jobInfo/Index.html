@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html ng-app="Module" >
+    <head>
+        <title>People Informaion by angular js and web api</title>
+        <!--<style type="text/css">
+            .panel-title { }
+
+            .panel-heading { }
+
+            .panel-default { }
+
+            .col-md-4 { }
+
+            .row { }
+
+            .panel { }
+
+            .panel-body { }
+
+            .table { }
+
+            .btn-default { }
+
+            .btn { }
+        </style>-->
+
+    </head>
+
+    <body>
+        <div class="row" ng-controller="Controller">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Add , Update, Delete People Information</h2>
+                        
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <span>  Name :</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="pname" ng-model="name" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span> Background :</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="pbackground" ng-model="background" required/>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <span>Email :</span>
+                                </td>
+                                <td>
+                                    <input type="email" id="pemail" ng-model="email" required />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="button" class="btn btn-default" id="new" value="New" ng-click="clear()" />
+                                </td>
+                                <td>
+                                    <input type="button" class="btn btn-default" id="save" value="Save" ng-click="save()" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span> No :</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="pno" ng-model="Id" />
+                                </td>
+                                <td>
+                                    <input type="button" class="btn btn-default" id="delete" value="Delete" ng-click="delete()" />
+                                </td>
+                            </tr>
+
+                        </table>
+                        <div class="alert alert-sucess"> {{ message }}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">People Details</h2>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>People No</th>
+                                <th>People Name</th>
+                                <th>Background</th>
+                                <th>Email</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="people in peopleInfos">
+                            <tr ng-click="get(people)">
+                                <td> <span>{{people.Id}}</span></td>
+                                <td> <span>{{people.name}}</span></td>
+                                <td> <span>{{people.background}}</span></td>
+                                <td> <span>{{people.email}}</span></td>
+                              
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+                <div class="alert alert-warning">To Update or Delete Information Click the element</div>
+            </div>
+        </div>
+
+    </body>
+</html>
+<link href="Content/bootstrap.css" rel="stylesheet" />
+<link href="Content/bootstrap-theme.css" rel="stylesheet" />
+<script src="Scripts/angular.js"></script>
+<script src="Scripts/angular-route.js"></script>
+<script src="Scripts/My Script/Module.js"></script>
+<script src="Scripts/My Script/Service.js"></script>
+<script src="Scripts/My Script/Controller.js"></script>
+<!--<script src="Scripts/angular-ui-bootstrap.js"></script>-->
+<!--<script src="Scripts/angular-ui-bootstrap.js"></script>-->
